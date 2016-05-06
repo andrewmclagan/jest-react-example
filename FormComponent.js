@@ -1,9 +1,5 @@
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
-
-const reducer = combineReducers({ formReducer: formReducer });
-const store = createStore(reducer);
 
 export class FormComponent extends React.Component {
 
