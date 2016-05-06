@@ -2,7 +2,7 @@ import React from 'react';
 import { createStore, combineReducers } from 'redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 
-const reducer = combineReducers({ formReducer });
+const reducer = combineReducers({ formReducer: formReducer });
 const store = createStore(reducer);
 
 export class FormComponent extends React.Component {
@@ -13,11 +13,13 @@ export class FormComponent extends React.Component {
 
   render() {
 
-    const { handleSubmit, fields: { firstName }} = this.props;
+    const handleSubmit = this.props.handleSubmit;
+
+    const firstName = this.props.fields.firstName;
 
     return (
       <form onSubmit={handleSubmit}>
-        <input type="text" {...firstName} />
+        <input type="text" touched={firstName.touched} error={firstName.error} value={firstName.value} />
       </form>
     );
   }

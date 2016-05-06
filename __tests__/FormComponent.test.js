@@ -10,9 +10,9 @@ import FormComponent from '../FormComponent';
 function props() {
   return {
     fields: {
-      firstName: { touched: null, error: null, value: ''},
+      firstName: { touched: null, error: null, value: ''}
     },
-    handleSubmit: () => {},
+    handleSubmit: () => {}
   };
 }
 
@@ -21,7 +21,7 @@ describe('FormComponent', () => {
   it('renders a single input field', () => {
 
     const input = TestUtils.renderIntoDocument(
-      <FormComponent {...props()} />
+      <FormComponent fields={props().fields} handleSubmit={props().handleSubmit} />
     );
 
     const inputNode = ReactDOM.findDOMNode(input);
