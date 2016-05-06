@@ -1,5 +1,5 @@
 import React from 'react';
-import { reduxForm, reducer as formReducer } from 'redux-form';
+import { reduxForm } from 'redux-form';
 
 export class FormComponent extends React.Component {
 
